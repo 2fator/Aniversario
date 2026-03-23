@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Aniversários Escolar</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
     <!-- Ícones simples via Google Fonts (opcional, mas melhora a UI sem ser framework pesado) -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
@@ -48,12 +50,18 @@
             <div class="section-header">
                 <h2>Todos os Alunos</h2>
                 <div class="header-actions">
-                    <input type="file" id="import-file" accept=".csv" hidden>
-                    <button id="import-btn" class="secondary-btn" title="Importar CSV">
+                    <button id="install-pwa-btn" class="secondary-btn hidden" title="Instalar Aplicativo">
+                        <span class="material-icons-round">download_for_offline</span> Instalar
+                    </button>
+                    <input type="file" id="import-file" accept=".csv, .xlsx, .xls, .docx" hidden>
+                    <button id="import-btn" class="secondary-btn" title="Importar Arquivo">
                         <span class="material-icons-round">upload</span> Importar
                     </button>
                     <button id="export-btn" class="secondary-btn" title="Baixar CSV">
                         <span class="material-icons-round">download</span> Exportar
+                    </button>
+                    <button id="clear-btn" class="danger-btn" title="Apagar Todos os Alunos">
+                        <span class="material-icons-round">delete_forever</span> Limpar
                     </button>
                 </div>
             </div>
@@ -67,6 +75,8 @@
         </section>
     </div>
 
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
