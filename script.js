@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'school_birthday_system_db';
     let deferredPrompt; // Variável para guardar o evento de instalação
 
+    // Aviso se estiver rodando via arquivo local (file://)
+    if (window.location.protocol === 'file:') {
+        console.warn("Atenção: A instalação do PWA (App) não funciona via protocolo 'file://'. Use um servidor local (localhost) ou hospede o site.");
+    }
+
     // --- DADOS INICIAIS (PRE-POPULADOS) ---
     const INITIAL_DATA = [
         { name: "ADONAY JOSÉ DA SILVA PINHEIRO", studentClass: "301", dob: "2009-07-21" },
@@ -260,12 +265,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mostra o nosso botão de instalação customizado
         if (installPwaBtn) {
             installPwaBtn.classList.remove('hidden');
+            // Destaque visual para o botão quando disponível
+            installPwaBtn.style.animation = "popIn 1s infinite alternate";
         }
     });
 
     if (installPwaBtn) {
         installPwaBtn.addEventListener('click', async () => {
             if (!deferredPrompt) return;
+            // Para a animação
+            installPwaBtn.style.animation = "none";
             // Mostra o prompt de instalação
             deferredPrompt.prompt();
             // Espera o usuário responder ao prompt
