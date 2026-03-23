@@ -142,6 +142,31 @@ button#add-btn:hover {
     background-color: var(--primary-color);
 }
 
+.danger-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.danger-btn:hover {
+    background-color: #d63031;
+}
+
+/* Botão de Instalação PWA */
+#install-pwa-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
 /* Barra de Pesquisa */
 .search-bar {
     display: flex;
