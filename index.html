@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Aniversários Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones simples via Google Fonts (opcional, mas melhora a UI sem ser framework pesado) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🎂 Aniversários da Escola</h1>
+            <p>Gerencie e visualize os aniversariantes do dia.</p>
+        </header>
+
+        <!-- Seção de Cadastro -->
+        <section class="card input-section">
+            <h2>Novo Aluno</h2>
+            <form id="student-form">
+                <div class="input-group">
+                    <input type="text" id="student-name" placeholder="Nome do Aluno" required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="student-class" placeholder="Turma (ex: 3º B)" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <input type="date" id="student-dob" required>
+                </div>
+                <button type="submit" id="add-btn">
+                    <span class="material-icons-round">add</span> Adicionar
+                </button>
+            </form>
+        </section>
+
+        <!-- Seção de Aniversariantes do Dia (Destaque) -->
+        <section id="birthday-section" class="birthday-highlight-container hidden">
+            <h2>🎉 Aniversariantes de Hoje! 🎉</h2>
+            <div id="birthday-list" class="list-container">
+                <!-- Preenchido via JS -->
+            </div>
+        </section>
+
+        <!-- Lista Geral de Alunos -->
+        <section class="card list-section">
+            <div class="section-header">
+                <h2>Todos os Alunos</h2>
+                <div class="header-actions">
+                    <input type="file" id="import-file" accept=".csv" hidden>
+                    <button id="import-btn" class="secondary-btn" title="Importar CSV">
+                        <span class="material-icons-round">upload</span> Importar
+                    </button>
+                    <button id="export-btn" class="secondary-btn" title="Baixar CSV">
+                        <span class="material-icons-round">download</span> Exportar
+                    </button>
+                </div>
+            </div>
+            <div class="search-bar">
+                <span class="material-icons-round">search</span>
+                <input type="text" id="search-input" placeholder="Pesquisar por nome...">
+            </div>
+            <div id="student-list" class="list-container">
+                <!-- Preenchido via JS -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

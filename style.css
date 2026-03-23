@@ -1,0 +1,246 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --accent-color: #fdcb6e;
+    --bg-color: #f4f7f6;
+    --text-color: #2d3436;
+    --card-bg: #ffffff;
+    --danger-color: #ff7675;
+    --success-bg: #e17055;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+#student-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button#add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s;
+}
+
+button#add-btn:hover {
+    background-color: #5849c2;
+}
+
+/* Seção de Aniversariantes */
+.birthday-highlight-container {
+    background: linear-gradient(135deg, #fdcb6e, #fab1a0);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(253, 203, 110, 0.3);
+    animation: popIn 0.5s ease;
+}
+
+.birthday-highlight-container h2 {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Cabeçalho da Seção de Lista */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f1f2f6;
+    padding: 5px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #dfe6e9;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 10px;
+}
+
+.search-bar input:focus {
+    border: none;
+    box-shadow: none; /* Remove outline padrão se houver */
+}
+
+.search-bar .material-icons-round {
+    color: #b2bec3;
+}
+
+/* Lista de Alunos */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+/* Destaque para mês atual na lista geral */
+.student-item.current-month {
+    border-left-color: var(--primary-color);
+    background-color: #fdfdfd;
+}
+
+.month-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Item na lista de destaques tem estilo diferente */
+.birthday-highlight-container .student-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-left: 5px solid #fff;
+}
+
+.student-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.student-info span {
+    font-size: 0.9rem;
+    color: #636e72;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--danger-color);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 118, 117, 0.1);
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    #student-form { flex-direction: column; }
+    button#add-btn { padding: 12px; width: 100%; justify-content: center; }
+}
