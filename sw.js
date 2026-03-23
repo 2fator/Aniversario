@@ -1,4 +1,4 @@
-const CACHE_NAME = 'escola-aniversarios-v11';
+const CACHE_NAME = 'escola-aniversarios-v13';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
