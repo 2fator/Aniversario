@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aviso se estiver rodando via arquivo local (file://)
     if (window.location.protocol === 'file:') {
         console.warn("Atenção: A instalação do PWA (App) não funciona via protocolo 'file://'. Use um servidor local (localhost) ou hospede o site.");
+        alert("⚠️ MODO DE VISUALIZAÇÃO INCORRETO ⚠️\n\nVocê abriu o arquivo direto (file://). Para instalar o App (PWA) no celular, você precisa HOSPEDAR este site (ex: GitHub Pages) ou usar um servidor local.\n\nO botão de instalar NÃO aparecerá neste modo.");
     }
 
     // --- DADOS INICIAIS (PRE-POPULADOS) ---
