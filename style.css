@@ -266,10 +266,11 @@ button#add-btn:hover {
 }
 
 /* --- RESPONSIVIDADE (Mobile) --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     /* Ajustes gerais de container */
-    body { padding: 10px; }
-    .card { padding: 15px; }
+    body { padding: 10px; font-size: 16px; }
+    .container { width: 100%; }
+    .card { padding: 15px; border-radius: 10px; }
 
     /* Formulário: um campo por linha */
     #student-form { flex-direction: column; }
@@ -278,21 +279,21 @@ button#add-btn:hover {
     /* Cabeçalho da Seção (Título e Botões) */
     .section-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 15px;
     }
     
     .header-actions {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 botões por linha */
+        display: flex;
+        flex-direction: column; /* Um botão abaixo do outro para não quebrar */
         gap: 8px;
     }
 
-    .secondary-btn, .danger-btn {
+    .secondary-btn, .danger-btn, #install-pwa-btn {
         justify-content: center;
         width: 100%;
-        font-size: 0.85rem;
+        padding: 12px; /* Botões maiores para o dedo */
+        font-size: 1rem;
     }
 
     /* Lista de Alunos */
@@ -300,15 +301,26 @@ button#add-btn:hover {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        position: relative;
     }
     
     .student-item .delete-btn {
-        align-self: flex-end; /* Botão de apagar vai para a direita */
-        background-color: #ffecec; /* Fundo leve para facilitar o toque */
-        padding: 8px;
+        width: 100%;
+        background-color: #ffecec;
+        padding: 10px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
     }
     
     .student-info h3 {
         font-size: 1rem;
+    }
+
+    /* Ajuste para o texto não ficar colado na borda */
+    .student-info {
+        width: 100%;
     }
 }
